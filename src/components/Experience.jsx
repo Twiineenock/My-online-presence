@@ -9,38 +9,42 @@ const Experience = () => {
     <section id="experience" className="fade-in-section">
       <h2 className="section-title">System.Experience()</h2>
       
-      <div className="glass-panel" style={{ marginBottom: '2rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-          <h3 style={{ color: 'var(--matrix-green)', fontSize: '1.5rem', margin: 0 }}>
-            <span>OpenMRS</span>
-          </h3>
-          <span style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>2025</span>
+      <div className="glass-panel" style={{ marginBottom: '2.5rem' }}>
+        <div className="widget-content">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <h3 className="widget-title" style={{ margin: 0 }}>
+              <span>OpenMRS</span>
+            </h3>
+            <span style={{ fontSize: '1.1rem', color: 'var(--matrix-green)', opacity: 0.8 }}>2025</span>
+          </div>
+          <p style={{ fontStyle: 'italic', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '1.1rem' }}>GSoC Contributor</p>
+          <p style={{ marginBottom: '2rem' }}>
+            As a <span className="text-highlight">GSoC 2025</span> contributor for OpenMRS, I've been actively involved in enhancing the core medical record system. 
+            Focusing on full-stack features, I've collaborated with international mentors to deliver high-impact features using 
+            <span className="text-highlight"> React</span> for the frontend and <span className="text-highlight">Java-based microservices</span>.
+          </p>
+          
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="btn-primary"
+            style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1rem' }}
+          >
+            <ExternalLink size={20} />
+            Retrieve GSoC Certificate
+          </button>
         </div>
-        <p style={{ fontStyle: 'italic', color: 'var(--matrix-light-green)', marginBottom: '1rem' }}>GSoC Contributor</p>
-        <p style={{ lineHeight: '1.6', marginBottom: '1.5rem' }}>
-          As a GSoC 2025 contributor for OpenMRS, I've been actively involved in enhancing the core medical record system. 
-          Focusing on full-stack features, I've collaborated with international mentors to deliver high-impact features using 
-          React for the frontend and Java-based microservices.
-        </p>
-        
-        <button 
-          onClick={() => setIsModalOpen(true)}
-          className="btn-primary"
-          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}
-        >
-          <ExternalLink size={18} />
-          Retrieve GSoC Certificate
-        </button>
       </div>
 
       <div className="glass-panel">
-        <h3 style={{ color: 'var(--matrix-green)', fontSize: '1.5rem' }}>Hedera / Hiero Ecosystem</h3>
-        <p style={{ fontStyle: 'italic', color: 'var(--matrix-light-green)', marginBottom: '1rem' }}>Web3 Enthusiast & Developer</p>
-        <p style={{ lineHeight: '1.6' }}>
-          I am deeply interested in the Hedera and Hiero network. My work involves exploring distributed ledger technologies (DLT), 
-          smart contract verification, and building enterprise-grade tools within the Hiero ecosystem. I am passionate about 
-          the transparency and efficiency that decentralized systems bring to modern software engineering.
-        </p>
+        <div className="widget-content">
+          <h3 className="widget-title">Hedera / Hiero Ecosystem</h3>
+          <p style={{ fontStyle: 'italic', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '1.1rem' }}>Web3 Enthusiast & Developer</p>
+          <p>
+            I am deeply interested in the <span className="text-highlight">Hedera</span> and <span className="text-highlight">Hiero</span> network. My work involves exploring distributed ledger technologies (DLT), 
+            smart contract verification, and building enterprise-grade tools within the Hiero ecosystem. I am passionate about 
+            the transparency and efficiency that decentralized systems bring to modern software engineering.
+          </p>
+        </div>
       </div>
 
       <CertificateModal 

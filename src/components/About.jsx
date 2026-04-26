@@ -4,31 +4,35 @@ const About = () => {
   return (
     <section id="about" className="fade-in-section">
       <h2 className="section-title">System.About()</h2>
-      <div className="glass-panel" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-        <div>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--matrix-green)' }}>&gt; Education Profile</h3>
-          <p style={{ marginBottom: '1rem', lineHeight: '1.6' }}>
-            I am currently pursuing a Bachelor's degree in <strong style={{ color: '#fff' }}>Software Engineering</strong> at 
-            <strong style={{ color: '#fff' }}> Bugema University (Main Campus)</strong>.
+      <div className="glass-panel" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '3rem' }}>
+        <div className="widget-content">
+          <h3 className="widget-title">&gt; Education Profile</h3>
+          <p style={{ marginBottom: '1.5rem' }}>
+            I am currently pursuing a Bachelor's degree in <span className="text-highlight">Software Engineering</span> at 
+            <span className="text-highlight"> Bugema University (Main Campus)</span>.
           </p>
-          <p style={{ lineHeight: '1.6' }}>
+          <p>
             My academic journey is heavily focused on understanding core computer science principles, software architecture, and modern web technologies. I thrive in building scalable systems and crafting intuitive user interfaces.
           </p>
         </div>
-        <div>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--matrix-green)' }}>&gt; Tech Stack</h3>
+        <div className="widget-content">
+          <h3 className="widget-title">&gt; Tech Stack</h3>
           <ul style={{ listStyleType: 'none', padding: 0 }}>
-            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ color: 'var(--matrix-green)' }}>[Frontend]</span> React.js, HTML5, CSS3, JavaScript
+            <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <span style={{ color: 'var(--matrix-green)', fontWeight: 'bold' }}>[Frontend]</span> 
+              <span style={{ color: 'var(--text-secondary)' }}>React.js, HTML5, CSS3, JavaScript</span>
             </li>
-            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ color: 'var(--matrix-green)' }}>[Backend]</span> Java, Spring Boot, Node.js, Express
+            <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <span style={{ color: 'var(--matrix-green)', fontWeight: 'bold' }}>[Backend]</span> 
+              <span style={{ color: 'var(--text-secondary)' }}>Java, Spring Boot, Node.js, Express</span>
             </li>
-            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ color: 'var(--matrix-green)' }}>[Database]</span> SQL, MongoDB
+            <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <span style={{ color: 'var(--matrix-green)', fontWeight: 'bold' }}>[Database]</span> 
+              <span style={{ color: 'var(--text-secondary)' }}>SQL, MongoDB</span>
             </li>
-            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ color: 'var(--matrix-green)' }}>[Tools]</span> Git, Docker, RESTful APIs
+            <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <span style={{ color: 'var(--matrix-green)', fontWeight: 'bold' }}>[Tools]</span> 
+              <span style={{ color: 'var(--text-secondary)' }}>Git, Docker, RESTful APIs</span>
             </li>
           </ul>
         </div>

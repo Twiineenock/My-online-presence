@@ -23,14 +23,16 @@ const Hobbies = () => {
   return (
     <section id="hobbies" className="fade-in-section">
       <h2 className="section-title">System.Hobbies()</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
         {hobbyList.map((hobby, index) => (
           <div key={index} className="glass-panel" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ color: 'var(--matrix-green)', marginBottom: '1.5rem' }}>
-              {hobby.icon}
+            <div className="widget-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ color: 'var(--matrix-green)', marginBottom: '2rem', filter: 'drop-shadow(0 0 10px rgba(0, 255, 0, 0.3))' }}>
+                {hobby.icon}
+              </div>
+              <h3 className="widget-title" style={{ justifyContent: 'center' }}>{hobby.title}</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>{hobby.description}</p>
             </div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{hobby.title}</h3>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.4' }}>{hobby.description}</p>
           </div>
         ))}
       </div>

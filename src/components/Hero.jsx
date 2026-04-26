@@ -3,20 +3,25 @@ import React from 'react';
 const Hero = () => {
   return (
     <section id="hero" style={{ alignItems: 'center', textAlign: 'center' }}>
-      <div className="glass-panel" style={{ padding: '4rem', maxWidth: '800px', width: '100%' }}>
-        <h1 className="glitch-text" data-text="TWIINE ENOCK" style={{ fontSize: '4.5rem', marginBottom: '0.5rem', color: '#fff' }}>
-          TWIINE ENOCK
-        </h1>
-        <h2 style={{ fontSize: '1.8rem', marginBottom: '2rem', color: 'var(--matrix-green)', opacity: 0.9 }}>
-          Software Engineer
-        </h2>
-        <p style={{ fontSize: '1.2rem', marginBottom: '3rem', color: 'var(--text-secondary)' }}>
-          Full Stack Developer | React & Java/Node.js | Open Source Contributor
-        </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-          <a href="#about">
-            <button className="btn-primary">Initialize Sequence</button>
-          </a>
+      <div className="glass-panel" style={{ padding: '5rem 4rem', maxWidth: '900px', width: '100%', borderTop: '2px solid var(--matrix-green)' }}>
+        <div className="widget-content">
+          <h1 className="glitch-text" data-text="TWIINE ENOCK" style={{ fontSize: '5rem', marginBottom: '1rem', color: '#fff', letterSpacing: '8px' }}>
+            TWIINE ENOCK
+          </h1>
+          <h2 style={{ fontSize: '2rem', marginBottom: '2.5rem', color: 'var(--matrix-green)', opacity: 1, letterSpacing: '4px' }}>
+            &gt; SOFTWARE ENGINEER_
+          </h2>
+          <p style={{ fontSize: '1.3rem', marginBottom: '3.5rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 3.5rem auto' }}>
+            Full Stack Developer | <span className="text-highlight">React</span> & <span className="text-highlight">Java/Node.js</span> | Open Source Contributor @ <span className="text-highlight">OpenMRS</span>
+          </p>
+          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
+            <a href="#about">
+              <button className="btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>Initialize Sequence</button>
+            </a>
+            <a href="#contact">
+              <button className="btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderColor: 'var(--text-secondary)', color: 'var(--text-secondary)' }}>Establish Connection</button>
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -2,13 +2,14 @@
 
 :root {
   --matrix-bg: #000000;
-  --matrix-green: #0f0;
+  --matrix-green: #00ff00;
   --matrix-dark-green: #003300;
-  --matrix-light-green: #aaffaa;
-  --text-primary: #0f0;
-  --text-secondary: rgba(0, 255, 0, 0.85);
-  --glass-bg: rgba(0, 10, 0, 0.85);
-  --glass-border: rgba(0, 255, 0, 0.3);
+  --matrix-light-green: #d1ffd1; /* Much lighter for better contrast */
+  --text-primary: #e0ffe0; /* Off-white green for high readability */
+  --text-secondary: #a0ffa0; /* Slightly dimmer but still very readable */
+  --glass-bg: rgba(0, 5, 0, 0.92); /* More opaque background */
+  --glass-border: rgba(0, 255, 0, 0.4);
+  --accent-glow: 0 0 10px rgba(0, 255, 0, 0.3);
 }
 
 * {
@@ -23,7 +24,8 @@ body {
   background-color: var(--matrix-bg);
   color: var(--text-primary);
   overflow-x: hidden;
-  text-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+  line-height: 1.8; /* Increased line height for better readability */
+  font-size: 1.05rem; /* Slightly larger base font */
 }
 
 /* Custom Scrollbar */
@@ -80,17 +82,33 @@ a:hover {
 .glass-panel {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
-  padding: 2.5rem;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(25px); /* Even more blur */
+  padding: 3rem; /* More breathing room */
+  border-radius: 12px;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.9), 
+    0 0 15px rgba(0, 255, 0, 0.05),
+    inset 0 0 20px rgba(0, 255, 0, 0.02); /* Subtle inner glow */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--matrix-green), transparent);
+  opacity: 0.3;
 }
 
 .glass-panel:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
-  border-color: rgba(0, 255, 0, 0.5);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 255, 0, 0.15);
+  border-color: rgba(0, 255, 0, 0.7);
 }
 
 .btn-primary {
@@ -148,9 +166,31 @@ a:hover {
   background: linear-gradient(
     to bottom,
     rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.15) 50%
+    rgba(0, 0, 0, 0.05) 50% /* Reduced intensity */
   );
   background-size: 100% 4px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1; /* Above MatrixRain but below content */
+}
+
+/* New Highlight Utility */
+.text-highlight {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+  font-weight: bold;
+}
+
+.widget-title {
+  color: var(--matrix-green);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.widget-content {
+  color: var(--text-primary);
+  line-height: 1.8;
 }
