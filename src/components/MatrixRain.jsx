@@ -10,24 +10,27 @@ const MatrixRain = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%""\'#&_(),.;:?!\\|{}<>[]^~';
-    const fontSize = 16;
+    const characters = '01';
+    const fontSize = 14;
     const columns = canvas.width / fontSize;
     const drops = [];
 
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
+    for (let i = 0; i < columns; i++) {
+      drops[i] = 1;
     }
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = '#0F0';
-      ctx.font = fontSize + 'px "Share Tech Mono", monospace';
-
       for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        
+        // Randomly switch between green and purple for a digital glitch feel
+        const isPurple = Math.random() > 0.95;
+        ctx.fillStyle = isPurple ? '#c084fc' : '#b9ff66';
+        ctx.font = `${fontSize}px Fira Code`;
+        
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
@@ -37,7 +40,7 @@ const MatrixRain = () => {
       }
     };
 
-    const interval = setInterval(draw, 33);
+    const interval = setInterval(draw, 50);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;

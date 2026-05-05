@@ -2,10 +2,14 @@ import React, { useEffect } from 'react';
 import './App.css';
 import MatrixRain from './components/MatrixRain';
 import Hero from './components/Hero';
-import About from './components/About';
+import Documents from './components/Documents';
+import Education from './components/Education';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Philosophy from './components/Philosophy';
 import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
+import Navbar from './components/Navbar';
 
 function App() {
   useEffect(() => {
@@ -21,7 +25,7 @@ function App() {
       });
     }, observerOptions);
 
-    const sections = document.querySelectorAll('.fade-in-section');
+    const sections = document.querySelectorAll('.fade-in');
     sections.forEach(section => observer.observe(section));
 
     return () => observer.disconnect();
@@ -29,12 +33,16 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="scanlines"></div>
-      <div className="vignette"></div>
-      <MatrixRain />
+      <Navbar />
+      <div className="matrix-bg-container">
+        <MatrixRain />
+      </div>
       <Hero />
-      <About />
+      <Documents />
+      <Education />
       <Experience />
+      <Projects />
+      <Philosophy />
       <Hobbies />
       <Contact />
     </div>

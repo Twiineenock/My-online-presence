@@ -1,28 +1,62 @@
 import React from 'react';
+import { ChevronRight, FileText } from 'lucide-react';
+import profilePic from '../assets/profile.jpg';
 
 const Hero = () => {
   return (
-    <section id="hero" style={{ alignItems: 'center', textAlign: 'center' }}>
-      <div className="glass-panel" style={{ padding: '5rem 4rem', maxWidth: '900px', width: '100%', borderTop: '2px solid var(--matrix-green)' }}>
-        <div className="widget-content">
-          <h1 className="glitch-text" data-text="TWIINE ENOCK" style={{ fontSize: '5rem', marginBottom: '1rem', color: '#fff', letterSpacing: '8px' }}>
-            TWIINE ENOCK
-          </h1>
-          <h2 style={{ fontSize: '2rem', marginBottom: '2.5rem', color: 'var(--matrix-green)', opacity: 1, letterSpacing: '4px' }}>
-            &gt; SOFTWARE ENGINEER_
-          </h2>
-          <p style={{ fontSize: '1.3rem', marginBottom: '3.5rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 3.5rem auto' }}>
-            Full Stack Developer | <span className="text-highlight">React</span> & <span className="text-highlight">Java/Node.js</span> | Open Source Contributor @ <span className="text-highlight">OpenMRS</span>
-          </p>
-          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-            <a href="#about">
-              <button className="btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>Initialize Sequence</button>
-            </a>
-            <a href="#contact">
-              <button className="btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderColor: 'var(--text-secondary)', color: 'var(--text-secondary)' }}>Establish Connection</button>
-            </a>
-          </div>
+    <section id="home" className="hero-section" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '4rem' }}>
+      <div className="fade-in is-visible" style={{ flex: 1 }}>
+        <div className="badge" style={{ marginBottom: '2rem' }}>
+          <span className="dot"></span>
+          AVAILABLE FOR SELECT PROJECTS
         </div>
+
+        <h1 className="section-title">
+          Engineering <br />
+          <span className="text-purple" style={{ fontStyle: 'italic' }}>Excellence</span> Into <br />
+          Scalable <span className="text-gradient">Startups.</span>
+        </h1>
+
+        <p className="section-subtitle" style={{ marginBottom: '3rem', fontSize: '1.25rem' }}>
+          Founder of Twiinex. A multi-disciplinary developer specializing in bridging trust between social media sellers and buyers through decentralized protocols.
+        </p>
+
+        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <a href="#projects" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            Explore Twiinex <ChevronRight size={18} />
+          </a>
+          <a href="#contact" className="btn-secondary">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+
+      <div className="fade-in is-visible" style={{ flex: '0 0 auto', position: 'relative' }}>
+        <div style={{ 
+          width: '350px', 
+          height: '350px', 
+          borderRadius: '50%', 
+          border: '2px solid var(--neon-purple)', 
+          padding: '10px',
+          boxShadow: 'var(--purple-glow)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <img 
+            src={profilePic} 
+            alt="Twiine Enock" 
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              borderRadius: '50%', 
+              objectFit: 'cover',
+              filter: 'grayscale(0.2) contrast(1.1)'
+            }} 
+          />
+        </div>
+        {/* Decorative elements */}
+        <div style={{ position: 'absolute', top: '-10px', right: '-10px', width: '60px', height: '60px', borderRight: '2px solid var(--neon-green)', borderTop: '2px solid var(--neon-green)' }}></div>
+        <div style={{ position: 'absolute', bottom: '-10px', left: '-10px', width: '60px', height: '60px', borderLeft: '2px solid var(--neon-green)', borderBottom: '2px solid var(--neon-green)' }}></div>
       </div>
     </section>
   );
